@@ -1,0 +1,22 @@
+<article>
+  <header>
+    <h1><a href="https://github.com/{{owner}}/{{repo}}">{{owner}}/{{repo}}</a></h1>
+  </header>
+
+  {{#if results}}
+    Issues:
+    <ul>
+    {{#each results}}
+      <li>{{.}}</li>
+    {{/each}}
+    </ul>
+  {{else}}
+    <h2>No issues found</h2>
+  {{/if}}
+</article>
+
+<aside>
+  <hr/>
+  <p>View as <a href="/lint/{{owner}}/{{repo}}">JSON</a></p>
+  <p>Monitor page using <a href="http://www.changedetection.com/">changedetection.com</a></p>
+</aside>

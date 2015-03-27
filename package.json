@@ -1,0 +1,35 @@
+{
+  "name": "ghlint-www",
+  "description": "Hapi front end for [ghlint](https://www.npmjs.com/package/ghlint).",
+  "version": "1.0.0",
+  "author": "Peter deHaan <peter@deseloper.com> (http://nodeexamples.com/)",
+  "bugs": {
+    "url": "https://github.com/pdehaan/ghlint-www/issues"
+  },
+  "dependencies": {
+    "babel": "4.7.16",
+    "ghlint": "0.9.0-alpha.1",
+    "handlebars": "3.0.1",
+    "hapi": "8.4.0",
+    "joi": "6.0.8",
+    "promise": "6.1.0"
+  },
+  "devDependencies": {
+    "eslint": "0.17.1"
+  },
+  "homepage": "https://github.com/pdehaan/ghlint-www",
+  "keywords": [
+    "ghlint",
+    "hapi"
+  ],
+  "license": "WTFPL",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pdehaan/ghlint-www.git"
+  },
+  "scripts": {
+    "start": "babel-node index",
+    "test": "eslint ."
+  }
+}
