@@ -1,5 +1,7 @@
 'use strict';
 
+var fs = require('fs');
+
 var convict = require('convict');
 
 var conf = convict({
@@ -35,9 +37,9 @@ var conf = convict({
 
 // load environment dependent configuration.
 var env = conf.get('env');
-conf.loadFile(`./config/${env}.json`);
+var files = [`./config/${env}.json`, process.env.CONFIG_FILES].filter(fs.existsSync);
 
-// perform validation
+conf.loadFile(files);
 conf.validate();
 
 module.exports = conf;

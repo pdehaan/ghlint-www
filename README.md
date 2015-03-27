@@ -9,4 +9,4 @@ Hapi front end for [ghlint](https://www.npmjs.com/package/ghlint).
 3. `$ npm install`
 4. `$ npm start`
 
-Running `npm start` will create a Hapi server on the specified `proces.env.PORT` (default: 3000).
+Running `npm start` will create a Hapi server on the specified `process.env.PORT` (default: 3000).
