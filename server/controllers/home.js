@@ -4,8 +4,6 @@ var pkg = require('../../package.json');
 
 module.exports = {
   handler: (request, reply) => {
-    reply.view('home', {
-      version: pkg.version
-    })
+    reply.view('home', pkg);
   }
 };

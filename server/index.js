@@ -10,6 +10,8 @@ var server = new Hapi.Server();
 server.connection({
   port: cfg.get('port')
 });
+
+// TODO: This is a bit ugly since `routes.routes` is mysteriously an empty array.
 server.route([
   routes.home,
   routes.lint

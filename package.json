@@ -1,6 +1,6 @@
 {
   "name": "ghlint-www",
-  "description": "Hapi front end for [ghlint](https://www.npmjs.com/package/ghlint).",
+  "description": "Front end for ghlint (a linter for GitHub projects).",
   "version": "1.0.0",
   "author": "Peter deHaan <peter@deseloper.com> (http://nodeexamples.com/)",
   "bugs": {

@@ -26,11 +26,13 @@ var conf = convict({
   ghlintId: {
     doc: 'GitHub ID',
     format: String,
+    default: '',
     env:'GHLINT_ID'
   },
   ghlintSecret: {
     doc: 'GitHub Secret',
     format: String,
+    default: '',
     env: 'GHLINT_SECRET'
   }
 });
