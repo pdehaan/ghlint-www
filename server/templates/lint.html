@@ -1,22 +1,37 @@
-<article>
-  <header>
-    <h1><a href="https://github.com/{{owner}}/{{repo}}">{{owner}}/{{repo}}</a></h1>
-  </header>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
-  {{#if results}}
-    Issues:
-    <ul>
-    {{#each results}}
-      <li>{{.}}</li>
-    {{/each}}
-    </ul>
-  {{else}}
-    <h2>No issues found</h2>
-  {{/if}}
+<article class="jumbotron">
+  <header class="container">
+    <h1><a href="https://github.com/{{ownerRepo}}">{{ownerRepo}}</a></h1>
+  </header>
 </article>
 
-<aside>
+<div class="container">
+  {{#if results}}
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <h3 class="panel-title">Issues:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        {{#each results}}
+          <li>{{.}}</li>
+        {{/each}}
+        </ul>
+      </div>
+    </div>
+  {{else}}
+    <div class="alert alert-success" role="alert">
+      <h2 class="text-center">No issues found!</h2>
+    </div>
+  {{/if}}
+
   <hr/>
-  <p>View as <a href="/lint/{{owner}}/{{repo}}">JSON</a></p>
-  <p>Monitor page using <a href="http://www.changedetection.com/">changedetection.com</a></p>
-</aside>
+  <nav role="navigation">
+    <ul class="nav nav-pills nav-justified">
+      <li role="presentation"><a href="/">Home</a></li>
+      <li role="presentation"><a href="/lint/{{ownerRepo}}">View as JSON</a></li>
+      <li><a href="http://www.changedetection.com/">Monitor page using changedetection.com</a></li>
+    </ul>
+  </nav>
+</div>

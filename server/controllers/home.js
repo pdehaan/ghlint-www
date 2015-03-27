@@ -1,7 +1,11 @@
 'use strict';
 
+var pkg = require('../../package.json');
+
 module.exports = {
   handler: (request, reply) => {
-    reply.view('home'); // <a href="/lint/mozilla/fxa-content-server">/lint/mozilla/fxa-content/server</a>');
+    reply.view('home', {
+      version: pkg.version
+    })
   }
 };

@@ -2,16 +2,18 @@
 
 var Hapi = require('hapi');
 
+var cfg = require('../config');
 var routes = require('./routes/index');
 var views = require('./views');
 
 var server = new Hapi.Server();
 server.connection({
-  port: process.env.PORT || 3000
+  port: cfg.get('port')
 });
+server.route([
+  routes.home,
+  routes.lint
+]);
 server.views(views);
-
-server.route(routes.home);
-server.route(routes.lint);
 
 module.exports = server;

@@ -8,11 +8,13 @@
   },
   "dependencies": {
     "babel": "4.7.16",
+    "convict": "0.6.1",
     "ghlint": "0.9.0-alpha.1",
     "handlebars": "3.0.1",
     "hapi": "8.4.0",
     "joi": "6.0.8",
-    "promise": "6.1.0"
+    "promise": "6.1.0",
+    "require-hapiroutes": "0.1.7"
   },
   "devDependencies": {
     "eslint": "0.17.1"
@@ -29,6 +31,7 @@
     "url": "https://github.com/pdehaan/ghlint-www.git"
   },
   "scripts": {
+    "outdated": "npm outdated --depth 0",
     "start": "babel-node index",
     "test": "eslint ."
   }

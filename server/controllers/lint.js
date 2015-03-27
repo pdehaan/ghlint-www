@@ -1,18 +1,16 @@
 'use strict';
 
-var ghlint = require('ghlint');
 var Joi = require('joi');
-var P = require('promise');
 
-var lintRepo = P.denodeify(ghlint.lintRepo);
+var lintRepo = require('../../lib/lintrepo');
 
 module.exports = {
   handler: (request, reply) => {
-    lintRepo(request.params.owner, request.params.repo).then((results) => {
-      if (request.params.fmt === 'html') {
+    var {owner, repo, format} = request.params;
+    lintRepo(owner, repo).then((results) => {
+      if (format === 'html') {
         reply.view('lint', {
-          owner: request.params.owner,
-          repo: request.params.repo,
+          ownerRepo: `${owner}/${repo}`,
           results: results
         });
       } else {
@@ -27,7 +25,7 @@ module.exports = {
     params: {
       owner: Joi.string(),
       repo: Joi.string(),
-      fmt: Joi.string().optional().default('json')
+      format: Joi.string().optional().valid('html', 'json').default('json')
     }
   }
 };
